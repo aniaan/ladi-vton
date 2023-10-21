@@ -242,8 +242,8 @@ class VitonHDDataset(data.Dataset):
                 pose_data = pose_data.reshape((-1, 3))[:, :2]
 
                 # rescale keypoints on the base of height and width
-                pose_data[:, 0] = pose_data[:, 0] * (self.width / 768)
-                pose_data[:, 1] = pose_data[:, 1] * (self.height / 1024)
+                # pose_data[:, 0] = pose_data[:, 0] * (self.width / 768)
+                # pose_data[:, 1] = pose_data[:, 1] * (self.height / 1024)
 
             pose_mapping = get_coco_body25_mapping()
 
@@ -300,8 +300,8 @@ class VitonHDDataset(data.Dataset):
                 data = data.reshape((-1, 3))[:, :2]
 
                 # rescale keypoints on the base of height and width
-                data[:, 0] = data[:, 0] * (self.width / 768)
-                data[:, 1] = data[:, 1] * (self.height / 1024)
+                # data[:, 0] = data[:, 0] * (self.width / 768)
+                # data[:, 1] = data[:, 1] * (self.height / 1024)
 
                 shoulder_right = tuple(data[pose_mapping[2]])
                 shoulder_left = tuple(data[pose_mapping[5]])
